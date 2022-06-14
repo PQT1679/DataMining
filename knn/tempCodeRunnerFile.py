@@ -1,0 +1,1 @@
+    visualf(traindata,1,3)

@@ -20,6 +20,8 @@ public:
     }
 };
 
+
+// lớp để lưu khoảng cách và nhãn của mẫu để dễ so sánh
 class Distance{
     public:
         double d;
@@ -30,6 +32,8 @@ class Distance{
     }
 };
 
+
+// đọc file đêỷ lấy dữ liệu huấn luyện
 vector<Sample> getTrainData(){
 ifstream MyFile("trainData_ex2_cpp.txt");
     string text;
@@ -73,7 +77,7 @@ ifstream MyFile("trainData_ex2_cpp.txt");
     return traindata;
 }
 
-
+// lấy dữ liệu kiểm thử
 vector<Sample> getTestData(){
 ifstream MyFile("testData_ex2_cpp.txt");
     string text;
@@ -117,6 +121,8 @@ ifstream MyFile("testData_ex2_cpp.txt");
     return testdata;
 }
 
+
+// ma trận lỗi
 double getConfusionmatrix(vector<Sample> testdata,vector<string> plabel){
     int pp=0,pm=0,mp=0,mm=0;
     for(int i=0;i<testdata.size();i++){
@@ -133,6 +139,8 @@ double getConfusionmatrix(vector<Sample> testdata,vector<string> plabel){
     return accuracy;
 }
 
+
+// hàm dự đoán nhãn
 string getLabel(vector<Sample> traindata,Sample t,int k){
     vector<Distance> d;
     Distance temp;

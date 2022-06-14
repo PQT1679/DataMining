@@ -20,6 +20,7 @@ public:
     }
 };
 
+// lớp để lưu khoảng cách và nhãn của mẫu để dễ so sánh
 class Distance{
     public:
         double d;
@@ -30,6 +31,7 @@ class Distance{
     }
 };
 
+// đọc dữ liệu huấn luyện
 vector<Sample> getTrainData(){
 ifstream MyFile("trainData.txt");
     string text;
@@ -73,7 +75,7 @@ ifstream MyFile("trainData.txt");
     return traindata;
 }
 
-
+// lấy dữ liệu kiểm thử
 vector<Sample> getTestData(){
 ifstream MyFile("testData.txt");
     string text;
@@ -116,6 +118,8 @@ ifstream MyFile("testData.txt");
     return testdata;
 }
 
+
+// hàm dự đoán nhãn
 string getLabel(vector<Sample> traindata,Sample t,int k){
     vector<Distance> d;
     Distance temp;
